@@ -23,4 +23,4 @@ if django.VERSION >= (1, 5):
 else:
     from django.contrib.auth.models import User
     AUTH_USER_MODEL = 'auth.User'
-    username_field = 'username'
+    username_field = getattr(settings, 'USERNAME_FIELD', 'username')
